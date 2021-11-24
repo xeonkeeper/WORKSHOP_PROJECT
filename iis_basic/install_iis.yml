@@ -1,9 +1,9 @@
 ---
-- name: Reboot host
+- name: Reboot hosts
   hosts: all
   
   tasks:
   - win_reboot:
-
+asdfasdf
   
   
