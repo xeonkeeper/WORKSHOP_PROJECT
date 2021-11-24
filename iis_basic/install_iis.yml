@@ -1,16 +1,2 @@
-- name: Configure all web servers
-  hosts: all
-  tasks:
-    - name: Common role
-      include_role:
-        name: common
-      vars:
-        timezone: GMT Standard Time
-        unicode_language: en-GB
-
-    - name: IIS role
-      include_role:
-        name: iis
-      vars:
-        title_content: "IIS Custom Title for {{ ansible_hostname }}"
-        font_colour: blue
+- name: Reboot the machine with all defaults
+  ansible.windows.win_reboot:
