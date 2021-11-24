@@ -1,3 +1,5 @@
-- name: Reboot a slow machine that might have lots of updates to apply
-  ansible.windows.win_reboot:
+- name: Configure all web servers
+  hosts: all
+  tasks:
+    ansible.windows.win_reboot:
     reboot_timeout: 3
