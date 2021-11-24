@@ -1,21 +1,16 @@
----
+- name: Configure all web servers
+  hosts: webservers
+  tasks:
+    - name: Common role
+      include_role:
+        name: common
+      vars:
+        timezone: GMT Standard Time
+        unicode_language: en-GB
 
-tasks:
-       - name: install iis
-         win_feature:
-           name: Web-Server
-           state: present
-
-       - name: start iis service
-         win_service:
-           name: W3Svc
-           state: started
-
-       - name: Create website index.html
-         win_copy:
-           content: "{{ iis_test_message }}"
-           dest: C:\Inetpub\wwwroot\index.html
-
-       - name: Show website address
-         debug:
-           msg: "http://{{ ansible_host }}"
+    - name: IIS role
+      include_role:
+        name: iis
+      vars:
+        title_content: "IIS Custom Title for {{ ansible_hostname }}"
+        font_colour: blue
