@@ -1,8 +1,9 @@
 ---
 - name: Update web servers
+  hosts: all
   
   tasks:
   - win_reboot:
-  
+
   
   
