@@ -1,5 +1,6 @@
 ---
-- name: Install DHCP Server
-  ansible.windows.win_feature:
-    name: DHCP
-    state: present
+- name: Reboot hosts
+  hosts: all
+  
+  tasks:
+  - win_reboot:
