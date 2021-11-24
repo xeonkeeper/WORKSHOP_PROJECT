@@ -1,5 +1,5 @@
 ---
-- name: Update web servers
+- name: Reboot host
   hosts: all
   
   tasks:
