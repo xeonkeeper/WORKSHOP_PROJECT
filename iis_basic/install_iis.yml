@@ -1,2 +1,3 @@
-- name: Reboot the machine with all defaults
+- name: Reboot a slow machine that might have lots of updates to apply
   ansible.windows.win_reboot:
+    reboot_timeout: 3
