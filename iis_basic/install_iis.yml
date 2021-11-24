@@ -1,5 +1,8 @@
-- name: Configure all web servers
-  hosts: all
+---
+- name: Update web servers
+  
   tasks:
-    ansible.windows.win_reboot:
-    reboot_timeout: 3
+  - win_reboot:
+  
+  
+  
