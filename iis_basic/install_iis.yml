@@ -1,5 +1,5 @@
 - name: Configure all web servers
-  hosts: webservers
+  hosts: all
   tasks:
     - name: Common role
       include_role:
