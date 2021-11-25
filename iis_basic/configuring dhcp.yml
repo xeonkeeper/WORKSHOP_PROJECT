@@ -26,7 +26,7 @@
 
   - name: Create dhcp scope
     win_dsc:
-      resource_name: xDhcpServer
+      resource_name: xDhcpServerScope
       Name: xDhcpServerScope
        IPStartRange = "192.168.0.3"
        IPEndRange = "192.168.0.7"
