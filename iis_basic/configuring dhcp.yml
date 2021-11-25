@@ -18,3 +18,7 @@
      log_path: C:\dns_log.txt
 
 
+- name: Install xDhcpServer DSC resource
+  win_psmodule:
+    name: xDhcpServer
+    state: present
