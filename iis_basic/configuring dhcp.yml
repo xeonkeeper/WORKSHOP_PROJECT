@@ -22,3 +22,17 @@
     win_psmodule:
      name: xDhcpServer
      state: present
+
+
+  - name: Create dhcp scope
+    win_dsc:
+      resource_name: xDhcpServer
+      Name: xDhcpServerScope
+       IPStartRange = "192.168.0.3"
+       IPEndRange = "192.168.0.7"
+       Name = "TestScope1"
+       SubnetMask = "255.255.255.240"
+       State = "Active"
+       Ensure = "Present"
+       LeaseDuration = "7:00:00"
+       DependsOn = "[WindowsFeature]DHCP"
