@@ -1,0 +1,20 @@
+- name: Config dhcp server
+  hosts: all
+  
+  tasks:
+
+  - name: Install dhcp role
+    ansible.windows.win_feature:
+     name: DHCP
+     state: present
+
+  - name: Configurin DNS settings
+    ansible.windows.win_dns_client:
+     adapter_names: '*'
+     dns_servers:
+      - 10.247.192.8
+      - 10.247.7.10
+      - 10.247.7.11
+     log_path: C:\dns_log.txt
+
+
