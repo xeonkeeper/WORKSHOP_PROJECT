@@ -27,13 +27,11 @@
   - name: Create dhcp scope
     win_dsc:
       resource_name: xDhcpServerScope
-      ScopeOptions:
-      - Name: xDhcpServerScope
-      - IPStartRange: 192.168.0.3
-      - IPEndRange: 192.168.0.7
-      - Name: TestScope1
-      - SubnetMask: 255.255.255.240
-      - State: Active
-      - Ensure: Present
-      - LeaseDuration: 7:00:00
+      Name: Scope1
+      IPStartRange: 192.168.0.3
+      IPEndRange: 192.168.0.7
+      SubnetMask: 255.255.255.240
+      State: Active
+      Ensure: Present
+      LeaseDuration: 7:00:00
        
